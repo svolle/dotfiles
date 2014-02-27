@@ -16,11 +16,14 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-HISTIGNORE='rm *:sudo* rm *:svn revert*:hadoop fs -rm*:sudo* hadoop fs -rm*'
+HISTIGNORE='rm *:sudo* rm *'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# enable globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -166,4 +169,3 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export EDITOR=vim
-export HADOOP_HOME=/usr/lib/hadoop
